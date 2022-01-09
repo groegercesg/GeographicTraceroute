@@ -5,7 +5,7 @@ from scapy.all import *
 # This support either IP or Domain
     # 172.67.195.197
     # callumgroeger.com
-hostname = "172.67.195.197"
+hostname = "quantumcore.com.au"
 
 ip_list = []
 
@@ -18,12 +18,14 @@ for i in range(1, 32):
         break
     elif reply.type == 3:
         # We've reached our destination
-        #print("Done!", reply.src)
+        print("Done!", reply.src)
         ip_list.append(reply.src)
         break
     else:
         # We're in the middle somewhere
-        #print("%d hops away: " % i , reply.src)
+        print("%d hops away: " % i , reply.src)
         ip_list.append(reply.src)
         
 print(ip_list)
+
+# Use ip info
